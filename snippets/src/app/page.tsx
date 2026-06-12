@@ -12,7 +12,7 @@ export default async function Home() {
         className="flex justify-between items-center p-2 border rounded"
       >
         <div>
-          {snippets.title}
+          {snippets.id} {" - "} {snippets.title}
         </div>
         <div>View</div>
       </Link>

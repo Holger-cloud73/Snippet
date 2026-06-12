@@ -2,6 +2,7 @@
 
 import { redirect } from 'next/navigation';
 import { db } from '@/db';
+import { revalidatePath } from 'next/cache';
 
 export async function editSnippet(id: number, code: string) {
     // console.log(id, code);
@@ -11,6 +12,7 @@ export async function editSnippet(id: number, code: string) {
         data: { code },
     });
 
+    revalidatePath(`/snippets/${id}`);
     redirect(`/snippets/${id}`);
 }
 
